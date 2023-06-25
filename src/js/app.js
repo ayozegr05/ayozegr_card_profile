@@ -37,10 +37,15 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="${variables.twitter}"><i class="fab fa-twitter fa-2xl"></i></a></li>
-            <li><a href="${variables.github}"><i class="fab fa-github fa-2xl"></i></a></li>
-            <li><a href="${variables.linkedin}"><i class="fab fa-linkedin fa-2xl"></i></a></li>
-            <li><a href="${variables.instagram}"><i class="fab fa-instagram fa-2xl"></i></a></li>
+            <li><a href="${variables.twitter ||
+              "https://twitter.com/4geeksacademy"}"><i class="fab fa-twitter fa-2xl"></i></a></li>
+            <li><a href="${variables.github ||
+              "https://github.com/4geeksacademy"}"><i class="fab fa-github fa-2xl"></i></a></li>
+            <li><a href="${variables.linkedin ||
+              "https://linkedin.com/4geeksacademy"}"><i class="fab fa-linkedin fa-2xl"></i></a></li>
+            <li><a href="${variables.instagram ||
+              "https://instagram.com/4geeksacademy"}"><i class="fab fa-instagram fa-2xl"></i></a></li>
+
           </ul>
         </div>
     `;
@@ -63,7 +68,7 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: "Name",
